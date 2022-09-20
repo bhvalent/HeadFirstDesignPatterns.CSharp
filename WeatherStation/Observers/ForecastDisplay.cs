@@ -8,7 +8,7 @@
 
         public ForecastDisplay(IObservable<WeatherData> weatherData)
         {
-            _unsubscriber = weatherData.Subscribe(this) ?? throw new ArgumentNullException(nameof(weatherData));
+            _unsubscriber = weatherData?.Subscribe(this) ?? throw new ArgumentNullException(nameof(weatherData));
         }
 
         public void Display()
